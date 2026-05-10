@@ -1,0 +1,26 @@
+{
+  "_comment": "Copy to devnet-config.json (gitignored) and fill with your own devnet wallet pubkeys + keypair arrays. Generate keypairs with: solana-keygen new -o /tmp/p1.json && cat /tmp/p1.json",
+  "programId": "69YfcveAbLbJ5LNERjq6k5wnszfZbXMYVzx2j8Ca1Xo8",
+  "mint": "<USDC devnet mint or your test mint pubkey>",
+  "protocolConfig": "<derive ProtocolConfigV2 PDA>",
+  "admin": "<your admin wallet pubkey>",
+  "protocolTreasury": "<your treasury ATA>",
+  "partner": {
+    "authority": "<partner authority pubkey>",
+    "secretKey": "[fill with raw 64-byte ed25519 array — never commit]",
+    "registry": "<registry PDA>",
+    "treasury": "<partner treasury ATA>"
+  },
+  "testPlayers": {
+    "p1": {
+      "publicKey": "<test player 1 pubkey>",
+      "secretKey": "[fill with raw 64-byte ed25519 array — never commit]",
+      "tokenAccount": "<player 1 token ATA>"
+    },
+    "p2": {
+      "publicKey": "<test player 2 pubkey>",
+      "secretKey": "[fill with raw 64-byte ed25519 array — never commit]",
+      "tokenAccount": "<player 2 token ATA>"
+    }
+  }
+}

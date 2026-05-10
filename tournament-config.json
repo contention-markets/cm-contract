@@ -1,0 +1,40 @@
+{
+  "usdfMint": "9Lc5ftsVbVS1T8c6D9Yan83fNaPryo3xpKp4DgKtyKhK",
+  "gamerplexTreasury": "B39KZHLMh1UdD1m9LAY1Y1Ezbv9z4cDTMtXN6MZLoVjs",
+  "protocolTreasury": "B39KZHLMh1UdD1m9LAY1Y1Ezbv9z4cDTMtXN6MZLoVjs",
+  "poolSponsorAta": "4QPM19nGc9HeBXKk6yKBxML9hpdDEBPWpNzrWAdadH7P",
+  "orchestratorConfigPda": "A1iwZw9XjakdXRQhDdd9WqAf74zJdJwApmQitspAEpbw",
+  "orchestratorPartnerRegistry": "Fad5f3gP4EHxgCAGns8VqHmmLdPhbeckFBVgKS13yMDS",
+  "bots": {
+    "sf1200": {
+      "pubkey": "Hzqo8q82PAFGuQy7dgZNkBZV1miZspMJP5dDg42uWjYr",
+      "ata": "3kiZvbM8wuAdKgMsKNNiXbmRUJHfF5YdLcyXr2a2woMi"
+    },
+    "sf1500": {
+      "pubkey": "5HTLBznoxZYaPLd8UDR6cqUX6MMnTESAdxDJ8h1q66me",
+      "ata": "79PPk2LrhufU8K52MgC7sNqfnbAQqHRBSD5brduHLonz"
+    },
+    "sf1800": {
+      "pubkey": "Ad5NJZNT8b3Bhw2vy9NicsQ1Ge4zmbQsTanwUbFcFaxc",
+      "ata": "DyF2XoD7Lq5jnomZVTnWkNBjJkNhFRj9VWhE2DbPaM4n"
+    },
+    "sf2100": {
+      "pubkey": "6J9Pyf2EF4vCwJdBWEyFJ9R2vNmcLGLXEgqHkUvf88eT",
+      "ata": "7yGmdfkSJoneVtiLGrgYagvT8ZBNq3JEEFDgHLkCr4ja"
+    },
+    "sf2400": {
+      "pubkey": "JBfgLFNjs4Jwh3oUt4GRgCxjeuyx2YsdNDHT1dHCtovt",
+      "ata": "HtAKtZ4temFh14A21djAmPjbr51mdRR9f6NdKLCvYxDz"
+    },
+    "sf3000": {
+      "pubkey": "FZyXnUd6ACUAh6bwrnJ95aWt6LVVesF4mCZ2E6c5A2w5",
+      "ata": "9cdPSDsPLm2nw2WZ2B2skssgqN225LcsuuZzfzwrB6sj"
+    }
+  },
+  "chessProgram": "3LVg8uUsHtq6fusjrSfyGUCLQ83TFegDKmY3bCNz3QYr",
+  "orchestratorProgram": "tsHnDDmYyqpcRyQejKcvai6fECRWyNQ4F87QgKcHg4d",
+  "cmProgram": "69YfcveAbLbJ5LNERjq6k5wnszfZbXMYVzx2j8Ca1Xo8",
+  "poolSponsor": "FNKPP6q2qk3wqMd7ErkWYk98etrZfuMnvGh2EQKdrrcJ",
+  "admin": "BEzD7tvdTJa6kT43GhxHqsH4ythbM9QVz9JhTGgU2rtA",
+  "updatedAt": "2026-04-20T09:50:48.196Z"
+}

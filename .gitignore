@@ -1,0 +1,48 @@
+# Solana/Anchor
+.anchor
+target
+test-ledger
+deploy-wallet.json
+*-keypair.json
+*.so
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build/Dist
+node_modules
+dist
+.next
+.yarn
+out
+ENGINEERING/
+
+# MacOS
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git
+**/*.rs.bk
+.env
+devnet-config.json
+*.env
+contNuVY7XAWJQVUbcfQFmVP8ENgJvdsWyPPs9Y3bRv.json
+
+# ── Secrets — NEVER commit ───────────────────────────────────────
+agent-config.json
+*-keypair.json
+*-secret*.json
+*.pem
+.env
+.env.local
+.env.*.local
+
+# ── Local-only legacy archives (never push) ──────────────────────
+_archive/
+**/_archive/

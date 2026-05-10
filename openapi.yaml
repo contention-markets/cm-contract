@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: Contention Markets B2B Protocol API
+  version: 1.0.0
+  description: The "Stripe for Prediction Markets." Powering Molty Games, Pet Legends, and 3rd Party Apps.
+
+servers:
+  - url: https://api.contention.markets/v1
+    description: Production
+
+paths:
+  # --- MARKET CREATION (B2B) ---
+  /markets:
+    post:
+      summary: Create Prediction Market
+      description: Called by Game Servers (PLA/Molty) to open a betting pool.
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title, outcomes, resolution_source]
+              properties:
+                title:
+                  type: string
+                  example: "MadLad #8420 vs Clayno #99"
+                outcomes:
+                  type: array
+                  items:
+                    type: string
+                  example: ["MadLad Wins", "Clayno Wins", "Draw"]
+                resolution_source:
+                  type: string
+                  description: The Public Key authorized to resolve this market (The Game Server Oracle)
+      responses:
+        '201':
+          description: Market Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  market_id:
+                    type: string
+                  deposit_address:
+                    type: string
+                    description: Where users send SOL to bet
+
+  # --- ODDS & STATE ---
+  /markets/{id}:
+    get:
+      summary: Get Market Odds
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Market State
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [OPEN, LOCKED, RESOLVED]
+                  pool_total:
+                    type: number
+                  outcome_odds:
+                    type: array
+                    items:
+                      type: number
+                    description: Decimal odds (e.g. 2.5x)
+
+  # --- RESOLUTION (ORACLE) ---
+  /markets/{id}/resolve:
+    post:
+      summary: Settle Market
+      description: Called by the Game Server when the match/week ends. Triggers payouts.
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [winning_outcome_index]
+              properties:
+                winning_outcome_index:
+                  type: integer
+                proof_signature:
+                  type: string
+                  description: Optional TxID proving the result on-chain (for transparency)
+      responses:
+        '200':
+          description: Settlement Queued
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
